@@ -1,0 +1,13 @@
+<h1><%= @recipe.title %></h1>
+<p><strong>Cook Time:</strong> <%= @recipe.cook_time %> minutes</p>
+<p><strong>Difficulty:</strong> <%= @recipe.difficulty %></p>
+
+<h4>Instructions</h4>
+<div class="border p-3 bg-white rounded">
+    <%= @recipe.instructions.to_s.html_safe %>
+</div>
+
+<hr>
+
+<%= link_to "Edit", edit_recipe_path(@recipe), class: "btn btn-warning" %>
+<%= link_to "Back to List", recipes_path, class: "btn btn-secondary" %>
